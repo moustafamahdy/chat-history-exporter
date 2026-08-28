@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Chat History Exporter</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1c1c1e;
+    background: #fff;
+  }
+  h1 { font-size: 1.75rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  .updated { color: #6b6b70; font-size: .9rem; margin-top: 0; }
+  .lede {
+    background: #f2f7f8;
+    border-left: 3px solid #207a8c;
+    padding: 1rem 1.1rem;
+    border-radius: 0 6px 6px 0;
+  }
+  table { border-collapse: collapse; width: 100%; margin-top: .75rem; }
+  th, td { text-align: left; padding: .55rem .7rem; border-bottom: 1px solid #e3e3e6; vertical-align: top; }
+  th { font-size: .85rem; text-transform: uppercase; letter-spacing: .03em; color: #5a5a60; }
+  code { background: #f0f0f2; padding: .1rem .35rem; border-radius: 3px; font-size: .9em; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8ea; background: #16161a; }
+    .lede { background: #17272b; }
+    th, td { border-bottom-color: #2d2d33; }
+    th { color: #9a9aa2; }
+    code { background: #24242a; }
+    .updated { color: #9a9aa2; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — Chat History Exporter</h1>
+<p class="updated">Last updated: 28 August 2026</p>
+
+<p class="lede">
+Chat History Exporter does not collect, transmit, or store your data on any
+server. Everything it does happens inside your own browser, on your own
+computer. There is no account, no analytics, no telemetry, and no backend.
+</p>
+
+<h2>What the extension accesses</h2>
+<p>
+When you are on <code>teams.live.com</code> or <code>teams.microsoft.com</code>
+and you click <strong>Export</strong>, the extension reads the conversation
+that is already displayed on the page — sender names, message text,
+timestamps, and the names of shared files — and assembles them into a file.
+</p>
+<p>It does not access any other website. It cannot run on any other website.</p>
+
+<h2>What it does with that data</h2>
+<p>
+It writes the assembled conversation to a file in your computer's Downloads
+folder, in the format you chose (JSON, HTML, or plain text). That file belongs to you
+and stays on your machine.
+</p>
+<p>
+The extension makes no network requests of its own. It has no ability to send
+your conversation anywhere: it contains no code that opens a network
+connection, and it requests no permission that would allow one. The only
+Chrome permission it requests is <code>downloads</code>, which lets it save the
+file without Chrome interrupting a long export with repeated prompts.
+</p>
+
+<h2>What it stores</h2>
+<p>
+One value, in your browser's local storage for the Teams site: the timestamp
+of the newest message from your last export of a given conversation. This lets
+a repeat export collect only what is new instead of starting over. It contains
+no message content. You can clear it at any time by clearing site data for
+Teams.
+</p>
+
+<h2>What it sends to us</h2>
+<p>
+Nothing. There is no "us" in a technical sense — no server, no database, no
+collection endpoint. The authors of this extension never see your
+conversations, and could not see them even if they wanted to.
+</p>
+
+<h2>Your responsibility for the exported file</h2>
+<p>
+The file the extension creates contains the full conversation, including
+anything the other participants wrote and the names of any files they shared.
+Treat it with the same care as the conversation itself: store it somewhere
+appropriate, and do not share it more widely than the participants would
+expect.
+</p>
+
+<h2>Permissions, explained</h2>
+<table>
+  <thead>
+    <tr><th>Permission</th><th>Why it is needed</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>downloads</code></td>
+      <td>To save the export file. A long conversation is saved in numbered parts, and without this permission Chrome blocks repeated saves from a page.</td>
+    </tr>
+    <tr>
+      <td>Access to <code>teams.live.com</code> and <code>teams.microsoft.com</code></td>
+      <td>To read the conversation you asked to export. These are the only sites the extension is allowed to run on.</td>
+    </tr>
+  </tbody>
+</table>
+<p>No other permission is requested.</p>
+
+<h2>Changes</h2>
+<p>
+If this policy changes, the updated version will be published at this same
+address, with a new date at the top.
+</p>
+
+<h2>Contact</h2>
+<p>
+Questions about this policy can be directed to the extension's publisher
+through the Chrome Web Store listing.
+</p>
+
+</body>
+</html>
