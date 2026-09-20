@@ -74,14 +74,28 @@ below.
 
 <h2>What it stores</h2>
 <p>
-A bookmark, in your browser's local storage for the Teams site, so that a
-repeat export can collect only what is new instead of starting over. It holds
-four things: the date of the oldest message the last export reached, an
-identifier for the newest message it saved, the name of the conversation with
-everything but letters and digits stripped out, and when it was written. It
-holds no message text, no sender names, no file links and no sign-in tokens,
-and it never leaves your computer. You can clear it at any time by clearing
-site data for Teams.
+Two small bookmarks per conversation, in your browser's local storage for the
+Teams site, so that a repeat export can collect only what is new instead of
+starting over:
+</p>
+<ul>
+  <li>
+    A <strong>watermark</strong> — one number, the identifier Teams gave the
+    newest message your last export reached.
+  </li>
+  <li>
+    A <strong>resume bookmark</strong> — the date of the oldest message that
+    export reached, the identifier of its newest message, the conversation's
+    name with everything but letters and digits removed, and the time it was
+    written.
+  </li>
+</ul>
+<p>
+Both are named after the same stripped-down conversation name, so that name
+appears in your own browser's storage. Neither holds message text, sender
+names, file links or sign-in tokens, and neither ever leaves your computer.
+You can clear both at any time by clearing site data for Teams; the only
+effect is that the next export starts from the beginning.
 </p>
 
 <h2>What it sends to us</h2>
