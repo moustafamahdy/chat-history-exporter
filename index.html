@@ -66,18 +66,22 @@ and stays on your machine.
 <p>
 The extension makes no network requests of its own. It has no ability to send
 your conversation anywhere: it contains no code that opens a network
-connection, and it requests no permission that would allow one. The only
-Chrome permission it requests is <code>downloads</code>, which lets it save the
-file without Chrome interrupting a long export with repeated prompts.
+connection, and it requests no permission that would allow one. It requests
+two Chrome permissions, <code>downloads</code> and <code>offscreen</code>, and
+neither of them permits a network connection. Both are explained in the table
+below.
 </p>
 
 <h2>What it stores</h2>
 <p>
-One value, in your browser's local storage for the Teams site: the timestamp
-of the newest message from your last export of a given conversation. This lets
-a repeat export collect only what is new instead of starting over. It contains
-no message content. You can clear it at any time by clearing site data for
-Teams.
+A bookmark, in your browser's local storage for the Teams site, so that a
+repeat export can collect only what is new instead of starting over. It holds
+four things: the date of the oldest message the last export reached, an
+identifier for the newest message it saved, the name of the conversation with
+everything but letters and digits stripped out, and when it was written. It
+holds no message text, no sender names, no file links and no sign-in tokens,
+and it never leaves your computer. You can clear it at any time by clearing
+site data for Teams.
 </p>
 
 <h2>What it sends to us</h2>
@@ -104,7 +108,11 @@ expect.
   <tbody>
     <tr>
       <td><code>downloads</code></td>
-      <td>To save the export file. A long conversation is saved in numbered parts, and without this permission Chrome blocks repeated saves from a page.</td>
+      <td>To save the export file. A long conversation is saved in numbered parts, and without this permission Chrome blocks repeated saves from a page. It is also used to confirm the final file was written and to remove the extension's own part-files afterwards; it never touches a download the extension did not create.</td>
+    </tr>
+    <tr>
+      <td><code>offscreen</code></td>
+      <td>To turn the assembled text into a saveable file. The background worker Chrome gives an extension has no document of its own, so it cannot create the link a download needs. The extension opens a hidden, empty page solely to create that link, hands it to the download, and discards it. That page has no network access and receives nothing but the text being saved.</td>
     </tr>
     <tr>
       <td>Access to <code>teams.live.com</code> and <code>teams.microsoft.com</code></td>
